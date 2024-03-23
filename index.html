@@ -12,21 +12,290 @@
 <body>
     <div class="drawer lg:drawer-open relative">
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content absolute top-5 left-5 z-30 lg:hidden">
+        <label for="my-drawer" onclick="handleClick(this)" class="drawer-button absolute top-5 left-5 z-30 lg:hidden"><i
+                class="fa-solid fa-bars"></i></label>
+        <div class="drawer-content min-h-screen mt-12 m-2 border rounded-2xl lg:m-2">
             <!-- Page content here -->
-            <label for="my-drawer" class="drawer-button"><i class="fa-solid fa-bars"></i></label>
+            <div class="border-b p-4 flex sm:flex-row flex-col space-y-4 justify-between items-center">
+                <p class="font-semibold capitalize">products</p>
+                <div class="flex flex-wrap justify-center space-x-4">
+                    <form class="relative mb-2">
+                        <input type="search" placeholder="Search for..."
+                            class="border rounded-lg focus:outline-0 pl-7 p-2">
+                        <button type="submit" class="absolute top-1/2 left-2 -translate-y-1/2"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                    <button class="py-1 mb-2 px-3 border rounded-md"><i class="fa-regular fa-clone "></i></button>
+                    <button class="py-1 mb-2 px-3 border rounded-md"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </div>
+            <div class="border-b p-4 flex flex-wrap md:justify-between items-center justify-center">
+                <div class="space-x-2 space-y-2">
+                    <select class="select select-bordered capitalize">
+                        <option disabled selected>all brands</option>
+                        <option>wix</option>
+                        <option>shopify</option>
+                        <option>paypal</option>
+                        <option>google</option>
+                    </select>
+                    <select class="select select-bordered capitalize">
+                        <option disabled selected>desk</option>
+                        <option>wix</option>
+                        <option>shopify</option>
+                        <option>paypal</option>
+                        <option>google</option>
+                    </select>
+                    <select class="select select-bordered capitalize">
+                        <option disabled selected>tags</option>
+                        <option>wix</option>
+                        <option>shopify</option>
+                        <option>paypal</option>
+                        <option>google</option>
+                    </select>
+                    <button class="btn bg-transparent hover:bg-transparent capitalize border-gray-300 border"><i
+                            class="fa-solid fa-arrow-up-wide-short"></i> sort</button>
+                    <button class="btn bg-transparent hover:bg-transparent capitalize border-gray-300 border"><i
+                            class="fa-solid fa-filter"></i> filter</button>
+                </div>
+                <div class="space-x-2 space-y-2">
+                    <button class="btn bg-transparent hover:bg-transparent capitalize border-gray-300 border"><i
+                            class="fa-regular fa-square-plus"></i> Meeting</button>
+                    <button class="btn bg-transparent hover:bg-transparent capitalize border-gray-300 border"><i
+                            class="fa-solid fa-cloud-arrow-down"></i> import/export</button>
 
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="table border-b">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox" />
+                                </label>
+                            </th>
+                            <th>Brand</th>
+                            <th>Categories</th>
+                            <th>Next Meeting</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row 1 -->
+                        <tr class="*:border-r">
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox" />
+                                </label>
+                            </th>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="mask mask-squircle w-12 h-12">
+                                            <img src="./src/img/wix.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">Wix</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="badge border-purple-400 text-purple-500 badge-outline">automation</p>
+
+                            </td>
+                            <td>
+                                <p class="badge border-green-300 text-green-500 badge-outline">in 30 minutes</p>
+                            </td>
+                        </tr>
+                        <!-- row 2 -->
+                        <tr class="*:border-r">
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox" />
+                                </label>
+                            </th>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="mask mask-squircle w-12 h-12">
+                                            <img src="./src/img/shopify.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">shopify</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="badge border-orange-300 text-orange-500 badge-outline">E-commerce</p>
+
+                            </td>
+                            <td>
+                                <p class="badge border-cyan-300 text-cyan-500 badge-outline">tomorrow</p>
+                            </td>
+                        </tr>
+                        <!-- row 3 -->
+                        <tr class="*:border-r">
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox" />
+                                </label>
+                            </th>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="mask mask-squircle w-12 h-12">
+                                            <img src="./src/img/money.png" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">paypal</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="badge border-green-300 text-green-500 badge-outline">marketplace</p>
+
+                            </td>
+                            <td>
+                                <p class="badge border-cyan-300 text-cyan-500 badge-outline">tomorrow</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="drawer-side lg:p-2">
+        <div class="drawer-side lg:border overflow-y-scroll min-h-[100%-10px] lg:rounded-2xl  lg:m-2">
             <label for="my-drawer-2" aria-label="close sidebar" class=""></label>
-            <ul class="menu lg:p-4 lg:rounded-2xl rounded-e-2xl p-4 pt-10 w-80 min-h-full border text-base-content">
+            <ul class="menu justify-between lg:p-4 p-4 pt-12 bg-white z-40 lg:w-80 w-full min-h-full text-base-content">
                 <!-- Sidebar content here -->
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
+                <div>
+                    <div class="flex justify-between">
+                        <div class="flex space-x-2 items-center">
+                            <p class="inline-block px-4 py-3 rounded-xl bg-black "><i
+                                    class="fa-brands fa-codepen text-xl text-white"></i></p>
+                            <p class="flex flex-col"><span class="text-gray-400">INC</span><span
+                                    class="text-black capitalize text-xl">InnovateHub</span></p>
+                        </div>
+                        <div class="avatar">
+                            <div class="w-12 rounded-full">
+                                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-5 space-y-1 rounded-xl p-1 border *:border-b">
+                        <li><a class="flex justify-between">
+                                <p><i class="fa-solid fa-pen-nib"></i> <span class="capitalize font-semibold">design
+                                        team</span>
+                                </p><kbd class="kbd kbd-sm">X+1</kbd>
+                            </a>
+                        </li>
+                        <li><a class="flex justify-between">
+                                <p><i class="fa-solid fa-bullhorn"></i> <span class="capitalize font-semibold">marketing
+                                        team</span>
+                                </p><kbd class="kbd kbd-sm">X+2</kbd>
+                            </a>
+                        </li>
+                        <li><a class="flex justify-between">
+                                <p><i class="fa-solid fa-code"></i> <span class="capitalize font-semibold">development
+                                        team</span>
+                                </p><kbd class="kbd kbd-sm">X+3</kbd>
+                            </a>
+                        </li>
+                        <li class="border-none text-gray-400"><a class="flex justify-between">
+                                <p><i class="fa-regular fa-square-plus pr-px"></i> <span
+                                        class="capitalize font-semibold">
+                                        create a
+                                        team</span>
+                                </p>
+                            </a></li>
+                    </div>
+                    <div>
+                        <p class="flex justify-between capitalize text-gray-400 font-semibold">folder <i
+                                class="fa-solid fa-plus"></i></p>
+                        <ul class="menu border my-5 rounded-box font-semibold text-black capitalize">
+                            <li>
+                                <details>
+                                    <summary><i class="fa-regular fa-folder"></i> products
+                                    </summary>
+                                    <ul>
+                                        <li><a>roadmap</a></li>
+                                        <li><a>feedback</a></li>
+                                        <li><a>perfomanceg</a></li>
+                                        <li><a>team</a></li>
+                                        <li><a>analytics</a></li>
+                                        <li class="border-none text-gray-400"><a class="flex justify-between">
+                                                <p><i class="fa-regular fa-square-plus pr-px"></i> <span
+                                                        class="capitalize font-semibold">
+                                                        add new sub</span>
+                                                </p>
+                                            </a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary><i class="fa-regular fa-folder"></i> sales
+                                    </summary>
+                                    <ul>
+                                        <li><a>roadmap</a></li>
+                                        <li><a>feedback</a></li>
+                                        <li><a>perfomanceg</a></li>
+                                        <li><a>team</a></li>
+                                        <li><a>analytics</a></li>
+                                        <li class="border-none text-gray-400"><a class="flex justify-between">
+                                                <p><i class="fa-regular fa-square-plus pr-px"></i> <span
+                                                        class="capitalize font-semibold">
+                                                        add new sub</span>
+                                                </p>
+                                            </a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li>
+                                <details>
+                                    <summary><i class="fa-regular fa-folder"></i> design
+                                    </summary>
+                                    <ul>
+                                        <li><a>roadmap</a></li>
+                                        <li><a>feedback</a></li>
+                                        <li><a>perfomanceg</a></li>
+                                        <li><a>team</a></li>
+                                        <li><a>analytics</a></li>
+                                        <li class="border-none text-gray-400"><a class="flex justify-between">
+                                                <p><i class="fa-regular fa-square-plus pr-px"></i> <span
+                                                        class="capitalize font-semibold">
+                                                        add new sub</span>
+                                                </p>
+                                            </a></li>
+                                    </ul>
+                                </details>
+                            </li>
+                            <li><a><i class="fa-regular fa-folder"></i> office</a></li>
+                            <li><a><i class="fa-regular fa-folder"></i> legal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="font-semibold text-black capitalize">
+                    <li><a><i class="fa-solid fa-user-plus"></i> invite teammates</a></li>
+                    <li><a class="flex justify-between">
+                            <p><i class="fa-regular fa-circle-question pr-px"></i> help and first steps
+                            </p><kbd class="kbd kbd-sm">0/6</kbd>
+                        </a>
+                    </li>
+                    <li><a>
+                            <p class="pr-4">7 days left on trial</p>
+                            <button class="btn btn-xs capitalize bg-black text-white inline-block hover:bg-black">add
+                                billing</button>
+                        </a></li>
+                </div>
             </ul>
 
         </div>
     </div>
+    <script src="./src/index.js"></script>
 </body>
 
 </html>
